@@ -1,0 +1,73 @@
+fragment Form on Form {
+  stage
+  publishedAt
+  updatedAt
+  createdAt
+  remoteId: id
+  formName
+  formSubmit
+  formSubmissionEmail
+  formSubmissionWebhook
+  formSuccess {
+    ... on FormFormSuccessRichText {
+      raw
+      json
+      html
+      markdown
+      text
+      references {
+        ... on Page {
+          remoteTypeName: __typename
+          remoteId: id
+          stage
+        }
+      }
+    }
+  }
+  formFields {
+    ... on FormField {
+      stage
+      id
+      formFieldName
+      formFieldLabel
+      formFieldPlaceholder
+      formFieldMandatory
+      formFieldType
+    }
+  }
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  pages {
+    ... on Page {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+}
