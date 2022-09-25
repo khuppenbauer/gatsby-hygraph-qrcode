@@ -145,9 +145,8 @@ const publishPage = async (id) => {
 }
 
 export default async function handler(req, res) {
-  console.log([req, res]);
-  const { body, rawHeaders } = req;
-  const [ domain ] = rawHeaders || 'https://www.mapseven.de';
+  const { body, headers } = req;
+  const { domain } = headers;
   const { operation, data } = body;
   const apiOperation = await isApiOperation(operation, data);
   if (apiOperation) {
