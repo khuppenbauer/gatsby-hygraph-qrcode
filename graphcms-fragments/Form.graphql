@@ -6,8 +6,6 @@ fragment Form on Form {
   remoteId: id
   formName
   formSubmit
-  formSubmissionEmail
-  formSubmissionWebhook
   formSuccess {
     ... on FormFormSuccessRichText {
       raw

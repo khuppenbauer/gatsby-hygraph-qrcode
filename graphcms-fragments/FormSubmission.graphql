@@ -5,8 +5,8 @@ fragment FormSubmission on FormSubmission {
   createdAt
   remoteId: id
   formName
-  formData
   formSubmissionDate
+  formData
   publishedBy {
     ... on User {
       remoteTypeName: __typename
