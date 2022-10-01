@@ -145,7 +145,8 @@ const publishPage = async (id) => {
 }
 
 export default async function handler(req, res) {
-  const { body, headers } = req;
+  console.log([req, res]);
+  /*const { body, headers } = req;
   const { domain } = headers;
   const { operation, data } = body;
   const apiOperation = await isApiOperation(operation, data);
@@ -195,7 +196,7 @@ export default async function handler(req, res) {
   await updateAsset(assetId, lightColor, darkColor, sha1);
   await publishAsset(assetId);
   await updateQrCode(id, title, slug, assetId, width, shortCode, lightColor, darkColor, qrCode.id);
-  await publishPage(id);
+  await publishPage(id);*/
   res.status(200).json({
     message: 'Ok'
   });
